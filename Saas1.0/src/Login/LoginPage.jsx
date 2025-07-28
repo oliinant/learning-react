@@ -18,13 +18,13 @@ function LoginPage() {
                     <InputLoginTemplate
                         inputName="username-input"
                         type="text"
-                        placeholder="Username"
+                        label="Username"
                     />
 
                     <InputLoginTemplate
                         inputName="password-input"
                         type={showPassword ? "text" : "password"}
-                        placeholder="password"
+                        label="Password"
                         focusedShowPassword={focusedShowPassword}
                         button={
                             <ShowPasswordBtn

@@ -20,13 +20,19 @@ function SignUp() {
                     <InputLoginTemplate
                         inputName="username-input"
                         type="text"
-                        placeholder="Username"
+                        label="Username"
+                    />
+
+                    <InputLoginTemplate
+                        inputName="email-input"
+                        type="text"
+                        label="Email"
                     />
 
                     <InputLoginTemplate
                         inputName="password-input"
                         type={showPassword ? "text" : "password"}
-                        placeholder="password"
+                        label="Password"
                         focusedShowPassword={focusedShowPassword}
                         button={
                             <ShowPasswordBtn
@@ -37,11 +43,7 @@ function SignUp() {
                         }
                     />
 
-                    <InputLoginTemplate
-                        inputName="email-input"
-                        type="text"
-                        placeholder="Email"
-                    />
+                    <RememberMe />
 
                     <button type="submit">Sign Up</button>
                 </form>

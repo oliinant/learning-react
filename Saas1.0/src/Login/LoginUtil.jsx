@@ -2,7 +2,7 @@ import eyeOn from "/src/assets/LoginAssets/showPasswordOn.png";
 import eyeOff from "/src/assets/LoginAssets/showPasswordOff.png";
 import { use, useState } from "react";
 
-export const InputLoginTemplate = ({ inputName, type, placeholder, focusedShowPassword=null, button=null}) => {
+export const InputLoginTemplate = ({ inputName, type, label, focusedShowPassword=null, button=null}) => {
     const [valueChange, setValueChange] = useState("");
     const [inputFocused, setinputFocused] = useState(false);
     const condition = button ? (focusedShowPassword || inputFocused) :  inputFocused
@@ -10,15 +10,17 @@ export const InputLoginTemplate = ({ inputName, type, placeholder, focusedShowPa
     return (
         <div className={inputName}>
             <input
-                type={type} 
-                placeholder={placeholder}
+                id={inputName}
+                type={type}
                 value={valueChange}
                 onFocus={() => { setinputFocused(true) }}
                 onBlur={() => { setinputFocused(false) }}
-                className={condition ? "input-login input-login-active" : "input-login"}
+                className={`${condition ? "input-login input-login-active" : "input-login"} ${valueChange ? "input-has-text" : "input-no-text"}`}
                 onChange={(e) => setValueChange(e.target.value)}
                 required
             />
+            <label htmlFor={inputName}>{label}</label>
+            <span>{label}</span>
             {button}
         </div>    
     );
